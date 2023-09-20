@@ -1,3 +1,4 @@
+python -m venv env
 call .\env\Scripts\activate.bat
 pip install django
 pip install djangorestframework
