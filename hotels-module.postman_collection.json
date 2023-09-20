@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "cbb05fbe-c21b-4e86-a5fb-a55892c25a4a",
+		"name": "hotels-module",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27764697"
+	},
+	"item": [
+		{
+			"name": "create-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testSupervisor\",\r\n    \"password\": \"OdiskeP\",\r\n    \"user_type\": 2\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"testGuest\",\r\n    \"password\":\"OdiskeP\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/auth/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-work-order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1MTk0MDg0LCJpYXQiOjE2OTUxOTM3ODQsImp0aSI6IjVjN2RlZTFmYjBiODQ2NGNhZTRkMmY1OTQwMTYxYjVkIiwidXNlcl9pZCI6NCwicGVybWlzc2lvbnMiOlsiY3JlYXRlX3dvcmtfb3JkZXJfdGVjaG5pY2lhbl9yZXEiXX0.R6XXIjhjeUI9HM_UntpLDOJiZA3lB_BmAC9zmcPXP3c",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"room\": 998,\r\n    \"type\": \"MAID_REQUEST\",\r\n    \"description\": \"Test request\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/work-orders/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"work-orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-order",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0OTU4OTc3LCJpYXQiOjE2OTQ5NTg2NzcsImp0aSI6IjBiN2I5OTdlOGIyMDQ2MTk5YjhmOGY4MWMwY2M0OTUzIiwidXNlcl9pZCI6MiwicGVybWlzc2lvbnMiOlsiY3JlYXRlX3dvcmtfb3JkZXJfdGVjaG5pY2lhbl9yZXEiLCJjcmVhdGVfd29ya19vcmRlcl9hbWVuaXR5X3JlcSJdfQ.jzOQHeDBQ-6OwKS2StvSFHrm35J-4Ez849KMMIPzqPw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"assignedTo\": \"testMaidSupervisor\",\r\n    \"status\": \"ASSIGNED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/work-orders/6507002fa5906618c8a9fa43/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"work-orders",
+						"6507002fa5906618c8a9fa43",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query-work-order-openai",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"command\": \"I want to get data that room number = 999 and status = CREATED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/work-orders-openai/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"work-orders-openai",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "analyze-work-order-openai",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"command\": \"I want to get pencentage of each type\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/analyze-work-orders-openai/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"analyze-work-orders-openai",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

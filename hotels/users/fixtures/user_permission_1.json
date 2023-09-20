@@ -1,0 +1,74 @@
+[
+    {
+        "model": "users.userpermission",
+        "pk": 1,
+        "fields": {
+            "user_type": 0,
+            "permission_type": 0
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 2,
+        "fields": {
+            "user_type": 0,
+            "permission_type": 1
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 3,
+        "fields": {
+            "user_type": 0,
+            "permission_type": 2
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 4,
+        "fields": {
+            "user_type": 0,
+            "permission_type": 3
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 5,
+        "fields": {
+            "user_type": 1,
+            "permission_type": 0
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 6,
+        "fields": {
+            "user_type": 1,
+            "permission_type": 1
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 7,
+        "fields": {
+            "user_type": 2,
+            "permission_type": 2
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 8,
+        "fields": {
+            "user_type": 3,
+            "permission_type": 2
+        }
+    },
+    {
+        "model": "users.userpermission",
+        "pk": 9,
+        "fields": {
+            "user_type": 3,
+            "permission_type": 3
+        }
+    }
+]
